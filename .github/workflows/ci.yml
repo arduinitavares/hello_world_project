@@ -1,11 +1,10 @@
 name: Python CI
 
-# Adicione o gatilho para acionar o workflow
-on:                                # <--- Adicione esta linha
-  push:                            # <--- Aciona em qualquer push
-    branches: [ main, dev ]        # <--- Aciona em pushes para `main` e `dev`
-  pull_request:                    # <--- Aciona em qualquer pull request
-    branches: [ main, dev ]        # <--- Aciona PRs para `main` e `dev`
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
 
 jobs:
   build:
@@ -13,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3   # Atualize para v3
 
       - name: Set Up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3   # Atualize para v3
         with:
           python-version: '3.11'
 
